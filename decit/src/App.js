@@ -1,7 +1,7 @@
 import Dec_File from "./artifacts/contracts/Dec_File.sol/Dec_File.json";
 import {useState, useEffect} from "react";
 import {ethers} from "ethers";
-import file from "./components/file.js";
+import File from "./components/file.js";
 import modal from "./components/modal.js";
 import display from "./components/display.js";
 
@@ -19,6 +19,14 @@ function App() {
 
     const loadprovider = async() => {
       if(provider){
+
+        window.ethereum.on("chainChanged", () => {
+          window.location.reload();
+        });
+
+        window.ethereum.on("accountsChanged", () => {
+          window.location.reload();
+        });
         await provider.send("eth_requestAccounts", []);
         const signer = provider.getSigner();
         const address = await signer.getAddress();
@@ -46,6 +54,11 @@ function App() {
       <h1>Dec-IT</h1>
       <h3>A Decentralized File System</h3>
       <p>Account: {account ? account: "Not Connected"}</p>
+      <File account={account}
+            provider={provider}
+            contract = {contract}>
+            
+            </File>
      </div>
   );
 }
