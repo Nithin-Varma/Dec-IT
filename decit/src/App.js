@@ -51,8 +51,13 @@ function App() {
   },[])
   return (
     <div className="App">
-      <h1>Dec-IT</h1>
-      <h3>A Decentralized File System</h3>
+      <h1 class="dec">Dec-IT</h1>
+      <h2>A Decentralized File System</h2>
+      <div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      </div>
       <p>Account: {account ? account: "Not Connected"}</p>
       <File account={account}
             provider={provider}
