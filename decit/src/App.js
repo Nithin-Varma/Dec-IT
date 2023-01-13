@@ -3,7 +3,7 @@ import {useState, useEffect} from "react";
 import {ethers} from "ethers";
 import File from "./components/file.js";
 import modal from "./components/modal.js";
-import display from "./components/display.js";
+import Display from "./components/display.js";
 
 import './App.css';
 
@@ -64,6 +64,11 @@ function App() {
             contract = {contract}>
             
             </File>
+      <Display account={account}
+            provider={provider}
+            contract = {contract}>
+            
+            </Display>
      </div>
   );
 }

@@ -26,7 +26,7 @@ const File = ({contract, account, provider}) => {
                 });
 
                 const ImgHash = `ipfs://${resfile.data.IpfsHash}`;
-                await contract.add(account,ImgHash)
+                contract.add(account,ImgHash)
                 alert("Uploaded Successfully");
                 setfilename("No file Selected");
                 setfile(null)
@@ -62,7 +62,7 @@ const File = ({contract, account, provider}) => {
         <input disabled={!account} type="file" id="file-upload" name = "data" onChange={retrievefile}/>
 
         <span className="textArea">" {filename} " </span><br/><br/><br/>
-        <button type="submit" className="upload">Upload</button>
+        <button type="submit" className="upload" disabled={!file}>Upload</button>
     </form>
     </div>
     )
