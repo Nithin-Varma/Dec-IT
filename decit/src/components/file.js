@@ -5,8 +5,6 @@ const File = ({contract, account, provider}) => {
 
     const [file, setfile] = useState(null);
     const [filename, setfilename] = useState("No file Selected");
-
-
     const handleSubmit = async(e) => {
         e.preventDefault();
         if(file) {
@@ -66,7 +64,5 @@ const File = ({contract, account, provider}) => {
     </form>
     </div>
     )
-    
 }
-
 export default File;
