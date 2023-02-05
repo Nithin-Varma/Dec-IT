@@ -5,6 +5,9 @@ const Display = ({contract, account, provider}) => {
     const [data, setdata] = useState("")
 
     const getdata = () => {
+        let dataArray;
+        const Otheraddress = document.querySelector(".address").value;
+        
 
     }
 
